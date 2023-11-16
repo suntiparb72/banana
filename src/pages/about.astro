@@ -1,4 +1,5 @@
 ---
+import "../style/global.css";
 const pageTitle = "About | Banana";
 
 const identity = {
@@ -8,6 +9,13 @@ const identity = {
   hobbies: ["photography", "birdwatching", "baseball"],
   skills: ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"],
 };
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
 
 // const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
@@ -19,6 +27,12 @@ const identity = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight }}>
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+      }
+    </style>
   </head>
   <body>
     <a href="/">Home</a>
@@ -46,7 +60,7 @@ const identity = {
     <p>My skills are:</p>
     <ul>
       <!-- {skills.map((skill) => <li>{skill}</li>)} -->
-      {identity.skills.map((item) => <li>{item}</li>)}
+      {identity.skills.map((item) => <li class="skill">{item}</li>)}
     </ul>
   </body>
 </html>
