@@ -1,0 +1,27 @@
+.
+├── README.md
+├── astro.config.mjs
+├── example.txt
+├── node_modules
+│   └── astro -> .pnpm/astro@3.5.4/node_modules/astro
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   └── favicon.svg
+├── src
+│   ├── components
+│   │   └── Navigation.astro
+│   ├── env.d.ts
+│   ├── pages
+│   │   ├── about.astro
+│   │   ├── blog.astro
+│   │   ├── index.astro
+│   │   └── posts
+│   │       ├── post-1.md
+│   │       ├── post-2.md
+│   │       └── post-3.md
+│   └── style
+│       └── global.css
+└── tsconfig.json
+
+8 directories, 16 files
