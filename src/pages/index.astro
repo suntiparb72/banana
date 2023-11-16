@@ -1,5 +1,8 @@
 ---
 import "../style/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Gtag from "../components/Googletag.astro"
 
 const pageTitle = "Banana";
 ---
@@ -11,24 +14,14 @@ const pageTitle = "Banana";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPWHG966HP"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-YPWHG966HP");
-    </script>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/blog/">Blog</a>
-    <a href="/about/">About</a>
+    <!-- import navigation component -->
+    <Navigation />
 
     <h1>Astro</h1>
     <h2>My Astro</h2>
+
+    <Footer />
   </body>
 </html>

@@ -1,5 +1,8 @@
 ---
 import "../style/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "About | Banana";
 
 const identity = {
@@ -35,9 +38,11 @@ const fontWeight = "bold";
     </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/blog/">Blog</a>
-    <a href="/about/">About</a>
+    <!-- <a href="/">Home</a>
+    <a href="/blog/">Blog</a> -->
+    <!-- <a href="/about/">About</a> -->
+
+    <Navigation />
 
     <h1>About Me</h1>
     <h2>{identity.firstName} and my new Astro site!</h2>
@@ -62,5 +67,7 @@ const fontWeight = "bold";
       <!-- {skills.map((skill) => <li>{skill}</li>)} -->
       {identity.skills.map((item) => <li class="skill">{item}</li>)}
     </ul>
+
+    <Footer />
   </body>
 </html>
