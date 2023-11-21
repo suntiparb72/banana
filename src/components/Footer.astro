@@ -8,12 +8,8 @@ import Social from "./Social.astro";
 <footer>
   <p>
     Learn more about my projects on
-    <a target="_blank" href={`https://www.${platform}.com/${username}`}>
-      {platform} !
-    </a>
+    <Social {platform} username={username} title="Github !"/>
   </p>
-  <p>
-    <Social {platform} username={userAnotherAccount} />
-  </p>
+  
   <!-- if platform={platform}. can used platform it work -->
 </footer>
