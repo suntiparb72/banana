@@ -1,7 +1,5 @@
 ---
-import "../style/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About | Banana";
 
@@ -23,66 +21,35 @@ const fontWeight = "bold";
 // const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+<BaseLayout {pageTitle}>
+  
+  <style define:vars={{ skillColor, fontWeight }}>
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+    }
+  </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-YPWHG966HP"></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-YPWHG966HP");
-    </script>
+  <h1>About Me</h1>
+  <h2>{identity.firstName} and my new Astro site!</h2>
 
-    <style define:vars={{ skillColor, fontWeight }}>
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-
-    <h1>About Me</h1>
-    <h2>{identity.firstName} and my new Astro site!</h2>
-
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}.</li>
-      <li>
-        I live in {identity.country} and I work as a {identity.occupation}.
-      </li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{" "}
-            {identity.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      <!-- {skills.map((skill) => <li>{skill}</li>)} -->
-      {identity.skills.map((item) => <li class="skill">{item}</li>)}
-    </ul>
-
-    <script>
-      import "../scripts/menu.js";
-    </script>
-
-    <Footer />
-  </body>
-</html>
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    <!-- {skills.map((skill) => <li>{skill}</li>)} -->
+    {identity.skills.map((item) => <li class="skill">{item}</li>)}
+  </ul>
+</BaseLayout>
