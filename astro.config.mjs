@@ -8,5 +8,6 @@ export default defineConfig({
     config: {
       forward: ['dataLayer.push']
     }
-  })]
+  })],
+  site: "https://elaborate-panda-f33b08.netlify.app"
 });
