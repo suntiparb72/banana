@@ -10,5 +10,5 @@ export default defineConfig({
       forward: ['dataLayer.push']
     }
   }), preact()],
-  site: "https://elaborate-panda-f33b08.netlify.app"
+  site: "https://banana72.netlify.app"
 });
